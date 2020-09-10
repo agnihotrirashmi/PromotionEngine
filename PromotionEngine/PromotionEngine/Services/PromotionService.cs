@@ -42,7 +42,7 @@ namespace PromotionEngine.Services
                     new CartProduct("B"),new CartProduct("B"),
                     new CartProduct("C"), new CartProduct("D")
                 })
-            };
+        };
             return cartList;
         }
 
@@ -108,7 +108,7 @@ namespace PromotionEngine.Services
                     skuOne = activePromotions.PromotionProductSKU.Split(',')[0];
                     skuTwo = activePromotions.PromotionProductSKU.Split(',')[1];
                     int skuOneCount = cart.CartProducts.Where(x => x.ProductSKU == skuOne).Count();
-                    int skuTwoCount = cart.CartProducts.Where(x => x.ProductSKU == skuOne).Count();
+                    int skuTwoCount = cart.CartProducts.Where(x => x.ProductSKU == skuTwo).Count();
                     if (skuOneCount >= activePromotions.NumberOfPromotionProductSKU && skuTwoCount >= activePromotions.NumberOfPromotionProductSKU)
                     {
                         if (skuOneCount >= skuTwoCount)
