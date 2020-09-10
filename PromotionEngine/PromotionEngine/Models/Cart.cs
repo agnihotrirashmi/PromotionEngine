@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace PromotionEngine.Models
 {
@@ -11,25 +9,25 @@ namespace PromotionEngine.Models
 
         public CartProduct(string SKU)
         {
-            this.ProductSKU = SKU;
+            ProductSKU = SKU;
             //Assigning price to product according to SKU
             switch (SKU)
             {
                 case "A":
-                    this.Price = 50;
+                    Price = 50;
                     break;
                 case "B":
-                    this.Price = 30;
+                    Price = 30;
                     break;
                 case "C":
-                    this.Price = 20;
+                    Price = 20;
                     break;
                 case "D":
-                    this.Price = 15;
+                    Price = 15;
                     break;
 
                 default:
-                    this.Price = 0;
+                    Price = 0;
                     break;
             }
         }
@@ -41,7 +39,7 @@ namespace PromotionEngine.Models
         public List<CartProduct> CartProducts { get; set; }
         public Cart(List<CartProduct> cartProducts)
         {
-            this.CartProducts = cartProducts;
+            CartProducts = cartProducts;
         }
     }
 }

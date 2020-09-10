@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PromotionEngine.Services
+﻿namespace PromotionEngine.Services
 {
+    /// <summary>
+    /// Active Promotions
+    /// </summary>
     public class ActivePromotions
     {
         public int PromotionId { get; set; }
@@ -11,15 +10,17 @@ namespace PromotionEngine.Services
         public string PromotionCategory { get; set; }
 
         //PromotionProduct will contain SKU and number of Item
-        public Dictionary<string, int> PromotionProduct { get; set; }
+        public string PromotionProductSKU { get; set; }
+        public int NumberOfPromotionProductSKU { get; set; }
         //Decided prmotion price
         public decimal PromotionPrice { get; set; }
-        public ActivePromotions(int id, string category, Dictionary<string, int> promoProduct, decimal price)
+        public ActivePromotions(int id, string category, string promoProductSKU, int numberOfPromotionProductSKU, decimal price)
         {
-            this.PromotionId = id;
-            this.PromotionCategory = category;
-            this.PromotionProduct = promoProduct;
-            this.PromotionPrice = price;
+            PromotionId = id;
+            PromotionCategory = category;
+            PromotionProductSKU = promoProductSKU;
+            NumberOfPromotionProductSKU = numberOfPromotionProductSKU;
+            PromotionPrice = price;
         }
     }
 }
